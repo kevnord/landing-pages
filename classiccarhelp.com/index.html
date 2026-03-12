@@ -4,44 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>classiccarhelp.com — For Sale</title>
-<meta name="description" content="This domain is for sale. Contact us to inquire.">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-    background:#0a0a0a;color:#f0f0f0;
-    min-height:100vh;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;padding:2rem;
+    background:#111008;
+    min-height:100vh;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:2rem;text-align:center;
   }
-  .container{max-width:560px;text-align:center}
+  /* Road stripes */
+  .road{
+    position:fixed;bottom:0;left:0;right:0;height:80px;
+    background:#1a1a1a;
+    border-top:3px solid #333;
+  }
+  .road::before{
+    content:'';
+    position:absolute;top:50%;left:0;right:0;height:4px;
+    margin-top:-2px;
+    background:repeating-linear-gradient(90deg,
+      #f5c518 0px, #f5c518 60px, transparent 60px, transparent 100px);
+  }
+  .car{
+    position:fixed;bottom:80px;left:50%;transform:translateX(-50%);
+    font-size:3.5rem;line-height:1;
+    animation:drive 8s linear infinite;
+  }
+  @keyframes drive{
+    0%  {left:-10%; transform:none}
+    100%{left:110%; transform:none}
+  }
+  .container{max-width:580px;width:100%;position:relative;z-index:1;padding-bottom:120px}
   .badge{
-    display:inline-block;font-size:11px;font-weight:600;
+    display:inline-block;font-size:11px;font-weight:700;
     letter-spacing:.15em;text-transform:uppercase;
-    color:#e67e22;border:1px solid #7a3f0a;
-    padding:4px 12px;border-radius:999px;margin-bottom:2rem
+    color:#111008;background:#f5c518;
+    padding:5px 14px;border-radius:999px;margin-bottom:1.5rem
   }
   h1{
-    font-size:clamp(1.8rem,5vw,3rem);font-weight:700;
-    letter-spacing:-.03em;line-height:1.1;color:#fff;margin-bottom:1.25rem
+    font-size:clamp(1.8rem,6vw,3.25rem);font-weight:900;
+    letter-spacing:-.03em;line-height:1.05;
+    color:#fff;margin-bottom:.25rem
   }
-  h1 .tld{color:#444;font-weight:300}
-  p{font-size:1rem;color:#777;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+  h1 .tld{color:#f5c518;font-weight:300}
+  .tagline{
+    font-size:.95rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:#f5c518;margin-bottom:.75rem
+  }
+  p{font-size:.95rem;color:#6a6050;line-height:1.7;margin-bottom:2rem;font-weight:300}
   .cta{
-    display:inline-block;background:#fff;color:#0a0a0a;
-    font-size:.875rem;font-weight:600;padding:14px 28px;
-    border-radius:6px;text-decoration:none;letter-spacing:.01em
+    display:inline-block;background:#f5c518;color:#111008;
+    font-size:.875rem;font-weight:700;padding:14px 28px;
+    border-radius:6px;text-decoration:none;letter-spacing:.01em;
+    transition:background .2s
   }
-  .cta:hover{background:#e5e5e5}
-  footer{position:fixed;bottom:1.5rem;font-size:.7rem;color:#333;letter-spacing:.05em}
+  .cta:hover{background:#ffd740}
+  footer{margin-top:2rem;font-size:.7rem;color:#2a2510;letter-spacing:.05em}
 </style>
 </head>
 <body>
+  <div class="road"></div>
+  <div class="car">🚗</div>
   <div class="container">
     <div class="badge">For Sale</div>
     <h1>classiccarhelp<span class="tld">.com</span></h1>
-    <p>This domain is for sale. Interested? Get in touch.</p>
+    <div class="tagline">⚙️ &nbsp; Your classic deserves better &nbsp; ⚙️</div>
+    <p>The perfect home for a classic car community, advice column, shop directory, or enthusiast hub. This domain is for sale — get in touch.</p>
     <a href="mailto:contact@classiccarhelp.com" class="cta">contact@classiccarhelp.com</a>
+    <footer>classiccarhelp.com</footer>
   </div>
-  <footer>classiccarhelp.com</footer>
 </body>
 </html>
