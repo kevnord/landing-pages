@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design C — Full Bleed</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap');
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #111;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .bg-accent {
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(230,126,34,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2rem;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #e67e22;
+    margin-bottom: 1.25rem;
+  }
+  h1 {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+  }
+  h1 .tld {
+    color: #444;
+    font-weight: 300;
+  }
+  p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .cta-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e67e22;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .cta:hover { background: #d35400; }
+  .cta-secondary {
+    font-size: 0.85rem;
+    color: #555;
+    text-decoration: none;
+  }
+  .cta-secondary:hover { color: #888; }
+  footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer span { font-size: 0.75rem; color: #333; }
+</style>
+</head>
+<body>
+  <div class="bg-accent"></div>
+  <main>
+    <div class="eyebrow">Launching Soon</div>
+    <h1>myrestoparts<span class="tld">.com</span></h1>
+    <p>Great things are in the works. If you're interested in this domain or what we're building, reach out.</p>
+    <div class="cta-row">
+      <a href="mailto:contact@myrestoparts.com" class="cta">
+        ✉ contact@myrestoparts.com
+      </a>
+    </div>
+  </main>
+  <footer>
+    <span>myrestoparts.com</span>
+    <span>© 2025</span>
+  </footer>
+</body>
+</html>
