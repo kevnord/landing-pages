@@ -5,63 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>classiccarhelp.com — For Sale</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
   *{margin:0;padding:0;box-sizing:border-box}
   body{
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
-    background:#111008;
+    background:#1a1008;
     min-height:100vh;
     display:flex;flex-direction:column;
     align-items:center;justify-content:center;
     padding:2rem;text-align:center;
   }
-  /* Road stripes */
+  /* Pinstripe border */
+  body::before{
+    content:'';position:fixed;inset:12px;
+    border:1px solid #8a6020;
+    pointer-events:none;z-index:10;
+  }
+  body::after{
+    content:'';position:fixed;inset:15px;
+    border:1px solid rgba(138,96,32,.3);
+    pointer-events:none;z-index:10;
+  }
+  /* Road */
   .road{
-    position:fixed;bottom:0;left:0;right:0;height:80px;
-    background:#1a1a1a;
-    border-top:3px solid #333;
+    position:fixed;bottom:0;left:0;right:0;height:70px;
+    background:#1a1a14;
+    border-top:2px solid #3a3020;
   }
   .road::before{
-    content:'';
-    position:absolute;top:50%;left:0;right:0;height:4px;
-    margin-top:-2px;
+    content:'';position:absolute;top:50%;left:0;right:0;height:3px;margin-top:-1px;
     background:repeating-linear-gradient(90deg,
-      #f5c518 0px, #f5c518 60px, transparent 60px, transparent 100px);
+      #c8922a 0px, #c8922a 50px, transparent 50px, transparent 90px);
   }
+  /* Checkered flags at road edges */
+  .road::after{
+    content:'';position:absolute;top:0;left:0;right:0;height:8px;
+    background:repeating-linear-gradient(90deg,
+      #2a2a1a 0px,#2a2a1a 8px,#c8922a 8px,#c8922a 16px);
+    opacity:.4;
+  }
+
+  /* Classic car — flip so it faces right */
   .car{
-    position:fixed;bottom:80px;left:50%;transform:translateX(-50%);
-    font-size:3.5rem;line-height:1;
-    animation:drive 8s linear infinite;
+    position:fixed;bottom:68px;
+    font-size:2.8rem;line-height:1;
+    display:inline-block;
+    transform:scaleX(-1);
+    animation:drive 9s linear infinite;
+    filter:sepia(.3) brightness(.95);
   }
   @keyframes drive{
-    0%  {left:-10%; transform:none}
-    100%{left:110%; transform:none}
+    0%  {left:-8%}
+    100%{left:108%}
   }
-  .container{max-width:580px;width:100%;position:relative;z-index:1;padding-bottom:120px}
+
+  .container{max-width:580px;width:100%;position:relative;z-index:1;padding-bottom:100px}
   .badge{
-    display:inline-block;font-size:11px;font-weight:700;
-    letter-spacing:.15em;text-transform:uppercase;
-    color:#111008;background:#f5c518;
-    padding:5px 14px;border-radius:999px;margin-bottom:1.5rem
+    display:inline-block;font-size:10px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;
+    color:#c8922a;border:1px solid #c8922a;
+    padding:4px 14px;border-radius:2px;margin-bottom:1.5rem
   }
   h1{
-    font-size:clamp(1.8rem,6vw,3.25rem);font-weight:900;
-    letter-spacing:-.03em;line-height:1.05;
-    color:#fff;margin-bottom:.25rem
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:clamp(1.8rem,6vw,3.5rem);font-weight:900;
+    letter-spacing:-.01em;line-height:1.05;
+    color:#f0e0c0;margin-bottom:.4rem
   }
-  h1 .tld{color:#f5c518;font-weight:300}
+  h1 .tld{color:#c8922a;font-weight:700}
+  .rule{
+    display:flex;align-items:center;gap:1rem;
+    justify-content:center;margin-bottom:.75rem
+  }
+  .rule::before,.rule::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#8a6020)}
+  .rule::after{background:linear-gradient(90deg,#8a6020,transparent)}
   .tagline{
-    font-size:.95rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-    color:#f5c518;margin-bottom:.75rem
+    font-size:.75rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;
+    color:#8a6020;
   }
-  p{font-size:.95rem;color:#6a6050;line-height:1.7;margin-bottom:2rem;font-weight:300}
+  p{font-size:.95rem;color:#7a6040;line-height:1.8;margin:1.25rem 0 2rem;font-weight:300}
   .cta{
-    display:inline-block;background:#f5c518;color:#111008;
-    font-size:.875rem;font-weight:700;padding:14px 28px;
-    border-radius:6px;text-decoration:none;letter-spacing:.01em;
+    display:inline-block;background:#c8922a;color:#1a1008;
+    font-size:.8rem;font-weight:700;padding:13px 32px;
+    border-radius:2px;text-decoration:none;letter-spacing:.12em;text-transform:uppercase;
     transition:background .2s
   }
-  .cta:hover{background:#ffd740}
-  footer{margin-top:2rem;font-size:.7rem;color:#2a2510;letter-spacing:.05em}
+  .cta:hover{background:#e0a830}
+  footer{margin-top:2rem;font-size:.65rem;color:#2a1a08;letter-spacing:.08em;text-transform:uppercase}
 </style>
 </head>
 <body>
@@ -70,8 +100,8 @@
   <div class="container">
     <div class="badge">For Sale</div>
     <h1>classiccarhelp<span class="tld">.com</span></h1>
-    <div class="tagline">⚙️ &nbsp; Your classic deserves better &nbsp; ⚙️</div>
-    <p>The perfect home for a classic car community, advice column, shop directory, or enthusiast hub. This domain is for sale — get in touch.</p>
+    <div class="rule"><span class="tagline">Your Classic Deserves Better</span></div>
+    <p>The perfect home for a classic car community, restoration guides, shop directory, or enthusiast hub. This domain is for sale — get in touch.</p>
     <a href="mailto:contact@classiccarhelp.com" class="cta">contact@classiccarhelp.com</a>
     <footer>classiccarhelp.com</footer>
   </div>
